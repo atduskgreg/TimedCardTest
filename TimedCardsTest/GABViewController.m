@@ -17,10 +17,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"CardOptions" ofType:@"plist"];
+    NSDictionary *cardDictionary = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    cardOptions = cardDictionary[@"Cards"];
+    
     cards = [[NSMutableArray alloc] init];
     
-    cardWidth =199;
+    cardWidth = 199;
     cardHeight = cardWidth*1.55;
 }
 
@@ -36,7 +39,6 @@
     NSLog(@"Touches Began");
     
     int xMargin = 5;
-//    int cardX = [cards count] * cardWidth + ([cards count]+1)*xMargin;
     
     [UIView beginAnimations:@"SlideDown" context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
@@ -49,19 +51,17 @@
 
     // TODO: make this dynamic based on card size?
     int numCardsPerRow = 5;
-    NSLog(@"numCardsPerRow: %i frame width: %f cardWidth: %i", numCardsPerRow,[self view].frame.size.width, cardWidth);
     for(GABTimedCard* aCard in cards){
         int newX;
-        NSLog(@"currentCard: %i numCardsPerRow: %i", currentCard, numCardsPerRow);
         if(currentCard+1 > numCardsPerRow){
             int cardPos = currentCard - numCardsPerRow;
             newX = cardPos * cardWidth + (cardPos+1) * xMargin;
         } else {
-         newX = currentCard * cardWidth + (currentCard+1) * xMargin;
+            newX = currentCard * cardWidth + (currentCard+1) * xMargin;
         }
 
         if(currentCard+1 > numCardsPerRow){
-            currentRow =1;
+            currentRow = 1;
         }
         
         int newY = 20 + (currentRow*(cardHeight+ 20));
@@ -77,8 +77,13 @@
 -(void) cardsDoneSliding:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
 {
     int xMargin = 5;
-
+    
+    
     GABTimedCard* newCard = [[GABTimedCard alloc] initWithFrame:CGRectMake(xMargin, 20, cardWidth, cardHeight)];
+    
+    int selectedOption = arc4random() % [cardOptions count];
+    [newCard setFromCardOptions:[cardOptions objectAtIndex:selectedOption]];
+    
     [cards insertObject:newCard atIndex:0];
     [[self view] addSubview:newCard];
     

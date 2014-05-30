@@ -41,6 +41,14 @@
     }
     return self;
 }
+
+-(void) setFromCardOptions:(NSDictionary*)options
+{
+    timeDuration = [[options objectForKey:@"duration"] integerValue];
+    [self setCompletionText:[options objectForKey:@"completionText"]];
+}
+
+
 -(void) setDuration:(int)duration
 {
     timeDuration = duration;

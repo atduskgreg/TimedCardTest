@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#include <stdlib.h>
 #import "GABTimedCard.h"
 
 @interface GABViewController : UIViewController{
@@ -14,6 +15,7 @@
     int cardHeight;
     
     NSMutableArray* cards;
+    NSArray* cardOptions;
 }
 
 -(void) cardsDoneSliding:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context;

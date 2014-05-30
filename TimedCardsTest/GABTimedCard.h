@@ -16,6 +16,8 @@
 //    int turnDuration;
 }
 
+-(void) setFromCardOptions:(NSDictionary*)options;
+
 -(void) setDuration:(int)duration;
 -(void) checkExpiration:(NSTimer*)timer;
 -(void) start;

@@ -22,6 +22,7 @@
 		37B8FE6A1938F83100E8A59A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37B8FE681938F83100E8A59A /* InfoPlist.strings */; };
 		37B8FE6C1938F83100E8A59A /* TimedCardsTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B8FE6B1938F83100E8A59A /* TimedCardsTestTests.m */; };
 		37B8FE771938F89F00E8A59A /* GABTimedCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B8FE761938F89F00E8A59A /* GABTimedCard.m */; };
+		37B8FE79193912F100E8A59A /* CardOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37B8FE78193912F100E8A59A /* CardOptions.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		37B8FE6B1938F83100E8A59A /* TimedCardsTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimedCardsTestTests.m; sourceTree = "<group>"; };
 		37B8FE751938F89F00E8A59A /* GABTimedCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GABTimedCard.h; sourceTree = "<group>"; };
 		37B8FE761938F89F00E8A59A /* GABTimedCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GABTimedCard.m; sourceTree = "<group>"; };
+		37B8FE78193912F100E8A59A /* CardOptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CardOptions.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				37B8FE521938F83100E8A59A /* Main.storyboard */,
 				37B8FE551938F83100E8A59A /* GABViewController.h */,
 				37B8FE561938F83100E8A59A /* GABViewController.m */,
+				37B8FE78193912F100E8A59A /* CardOptions.plist */,
 				37B8FE751938F89F00E8A59A /* GABTimedCard.h */,
 				37B8FE761938F89F00E8A59A /* GABTimedCard.m */,
 				37B8FE581938F83100E8A59A /* Images.xcassets */,
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37B8FE591938F83100E8A59A /* Images.xcassets in Resources */,
+				37B8FE79193912F100E8A59A /* CardOptions.plist in Resources */,
 				37B8FE4B1938F83100E8A59A /* InfoPlist.strings in Resources */,
 				37B8FE541938F83100E8A59A /* Main.storyboard in Resources */,
 			);
