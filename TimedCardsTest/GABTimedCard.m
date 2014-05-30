@@ -25,12 +25,16 @@
         self.layer.cornerRadius = 10;
         self.layer.masksToBounds = YES;
         
-        timeDisplay = [[UILabel alloc] initWithFrame:CGRectMake(frame.origin.x +2, frame.origin.y+2, frame.size.width-2, 50)];
+        timeDisplay = [[UILabel alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height-2)];
         [timeDisplay setTextColor:[UIColor blackColor]];
         [timeDisplay setBackgroundColor:[UIColor clearColor]];
         [timeDisplay setFont:[UIFont fontWithName: @"HelveticaNeue-Light" size: 50.0f]];
+        [timeDisplay setNumberOfLines:0]; // for wordwrap
+        
         [self addSubview:timeDisplay];
-      
+        
+        
+        [self setCompletionText:@"All your base are belong to us."];
         [self setDuration:5];
         [self start];
     }
@@ -52,10 +56,14 @@
     NSDate* nowDate =[NSDate date];
     
     if([nowDate timeIntervalSinceDate:startedAt] > timeDuration){
-        timeDisplay.text = @"Done";
+        [timeDisplay setFont:[UIFont fontWithName: @"HelveticaNeue-Light" size: 12.0f]];
+        timeDisplay.text = self.completionText;
+        [timer invalidate];
+
     } else {
         timeDisplay.text = [[NSString alloc] initWithFormat:@"%.02f",timeDuration - [nowDate timeIntervalSinceDate:startedAt]];
     }
+    
 }
 
 /*

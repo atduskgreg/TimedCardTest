@@ -20,4 +20,6 @@
 -(void) checkExpiration:(NSTimer*)timer;
 -(void) start;
 
+@property (nonatomic, retain) NSString* completionText;
+
 @end
