@@ -19,6 +19,18 @@
                                          target:self
                                        selector:@selector(checkExpiration:)
                                        userInfo:nil repeats:YES];
+        
+        self.layer.borderColor = [UIColor grayColor].CGColor;
+        self.layer.borderWidth = 3.0f;
+        self.layer.cornerRadius = 10;
+        self.layer.masksToBounds = YES;
+        
+        timeDisplay = [[UILabel alloc] initWithFrame:CGRectMake(frame.origin.x +2, frame.origin.y+2, frame.size.width-2, 50)];
+        [timeDisplay setTextColor:[UIColor blackColor]];
+        [timeDisplay setBackgroundColor:[UIColor clearColor]];
+        [timeDisplay setFont:[UIFont fontWithName: @"HelveticaNeue-Light" size: 50.0f]];
+        [self addSubview:timeDisplay];
+      
         [self setDuration:5];
         [self start];
     }
@@ -27,6 +39,8 @@
 -(void) setDuration:(int)duration
 {
     timeDuration = duration;
+    timeDisplay.text = [[NSString alloc] initWithFormat:@"%.02f",timeDuration];
+    [self setNeedsDisplay];
 }
 
 -(void) start
@@ -38,9 +52,9 @@
     NSDate* nowDate =[NSDate date];
     
     if([nowDate timeIntervalSinceDate:startedAt] > timeDuration){
-        NSLog(@"done");
+        timeDisplay.text = @"Done";
     } else {
-        NSLog(@"%f",[nowDate timeIntervalSinceDate:startedAt]);
+        timeDisplay.text = [[NSString alloc] initWithFormat:@"%.02f",timeDuration - [nowDate timeIntervalSinceDate:startedAt]];
     }
 }
 

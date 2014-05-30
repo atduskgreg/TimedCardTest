@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface GABTimedCard : UIView{
     NSTimeInterval timeDuration;
     NSDate* startedAt;
+    UILabel* timeDisplay;
 //    int turnDuration;
 }
 

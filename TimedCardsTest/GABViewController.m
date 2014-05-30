@@ -32,7 +32,9 @@
     NSLog(@"Touches Began");
     
     // TODO: dynamically set card location based on number of cards on screen/in grid
-    [cards addObject:[[GABTimedCard alloc] initWithFrame:CGRectMake(20, 20, 50, 100)]];
+    GABTimedCard* newCard = [[GABTimedCard alloc] initWithFrame:CGRectMake(20, 20, 200, 200*1.55)];
+    [cards addObject:newCard];
+    [[self view] addSubview:newCard];
     
     [super touchesEnded: touches withEvent: event];
     
