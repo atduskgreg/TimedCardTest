@@ -20,16 +20,16 @@ Cost: 3</string>
         <string>time</string>
         <key>completionText</key>
         <string>Terrorists set mines on the freeways.
-Cost 1 per turn for 5 turns.</string>
+Cost 1 per turn for duration of card.</string>
     </dict>
     <dict>
         <key>duration</key>
-        <integer>90</integer>
+        <integer>4</integer>
         <key>durationType</key>
-        <string>time</string>
+        <string>turns</string>
         <key>completionText</key>
-        <string>Terrorists set mines on the freeways.
-            Cost 1 per turn for 5 turns.</string>
+        <string>The Mayor is poisoned.
+Cost 1 per turn for 4 turns.</string>
     </dict>
 </array>
 </dict>

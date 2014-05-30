@@ -35,42 +35,80 @@
         [self addSubview:timeDisplay];
         
         
-        [self setCompletionText:@"All your base are belong to us."];
-        [self setDuration:5];
-        [self start];
+//        [self setCompletionText:@"All your base are belong to us."];
+//        [self setDuration:5];
+//        [self start];
     }
     return self;
 }
 
 -(void) setFromCardOptions:(NSDictionary*)options
 {
-    timeDuration = [[options objectForKey:@"duration"] integerValue];
+    NSLog(@"creating: %@", [options objectForKey:@"durationType"]);
+    
+    
+    if([[options objectForKey:@"durationType"] isEqualToString:@"turns"]){
+        isTurnBased = YES;
+        turnDuration = [[options objectForKey:@"duration"] integerValue];
+    } else { // card is time-based
+        isTurnBased = NO;
+        timeDuration = [[options objectForKey:@"duration"] integerValue];
+    }
+    
     [self setCompletionText:[options objectForKey:@"completionText"]];
+
 }
 
 
 -(void) setDuration:(int)duration
 {
-    timeDuration = duration;
-    timeDisplay.text = [[NSString alloc] initWithFormat:@"%.02f",timeDuration];
+    if(isTurnBased){
+        turnDuration = duration;
+        timeDisplay.text = [[NSString alloc] initWithFormat:@"%i", turnDuration];
+    } else{
+        timeDuration = duration;
+        timeDisplay.text = [[NSString alloc] initWithFormat:@"%.02f",timeDuration];
+    }
     [self setNeedsDisplay];
 }
 
--(void) start
+-(void) start;
 {
-    startedAt = [NSDate date];
+    NSLog(@"start: %i", isTurnBased);
+    if(isTurnBased){
+        timeStartedAt = [NSDate date];
+    } else{
+        NSLog(@"card duration: %i", [_cards count]);
+        turnStartedAt = [_cards count];
+    }
 }
 
 -(void) checkExpiration:(NSTimer*)timer{
-    NSDate* nowDate =[NSDate date];
     
-    if([nowDate timeIntervalSinceDate:startedAt] > timeDuration){
-        [timeDisplay setFont:[UIFont fontWithName: @"HelveticaNeue-Light" size: 12.0f]];
-        timeDisplay.text = self.completionText;
-        [timer invalidate];
+    if(isTurnBased){
+        int elapsedTurns = [_cards count] - turnStartedAt;
+        if(elapsedTurns == turnDuration){
+            [timeDisplay setFont:[UIFont fontWithName: @"HelveticaNeue-Light" size: 12.0f]];
+            timeDisplay.text = self.completionText;
+            [timer invalidate];
 
-    } else {
-        timeDisplay.text = [[NSString alloc] initWithFormat:@"%.02f",timeDuration - [nowDate timeIntervalSinceDate:startedAt]];
+        } else {
+            timeDisplay.text = [[NSString alloc] initWithFormat:@"%i", turnDuration - elapsedTurns];
+        }
+        
+    } else { // time-based
+        NSDate* nowDate =[NSDate date];
+        
+        if([nowDate timeIntervalSinceDate:timeStartedAt] > timeDuration){
+            [timeDisplay setFont:[UIFont fontWithName: @"HelveticaNeue-Light" size: 12.0f]];
+            timeDisplay.text = self.completionText;
+            [timer invalidate];
+            
+        } else {
+            timeDisplay.text = [[NSString alloc] initWithFormat:@"%.02f",timeDuration - [nowDate timeIntervalSinceDate:timeStartedAt]];
+        }
+
+        
     }
     
 }

@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "GABViewController.h"
 
 @interface GABTimedCard : UIView{
     NSTimeInterval timeDuration;
-    NSDate* startedAt;
+    NSDate* timeStartedAt;
     UILabel* timeDisplay;
-//    int turnDuration;
+    int turnDuration;
+    int turnStartedAt;
+    BOOL isTurnBased;
 }
 
 -(void) setFromCardOptions:(NSDictionary*)options;
@@ -23,5 +26,7 @@
 -(void) start;
 
 @property (nonatomic, retain) NSString* completionText;
+@property (nonatomic, retain) NSMutableArray* cards;
+
 
 @end
