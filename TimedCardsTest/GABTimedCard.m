@@ -24,6 +24,7 @@
         self.layer.borderWidth = 3.0f;
         self.layer.cornerRadius = 10;
         self.layer.masksToBounds = YES;
+        [self setBackgroundColor:[UIColor whiteColor]];
         
         timeDisplay = [[UILabel alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height-2)];
         [timeDisplay setTextColor:[UIColor blackColor]];
