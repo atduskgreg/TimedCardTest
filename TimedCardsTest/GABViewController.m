@@ -33,11 +33,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(int) turn
+{
+    return [cards count];
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"Touches Began");
     
+    [super touchesEnded: touches withEvent: event];
+}
+
+-(IBAction)drawCard:(id)sender
+{
     int xMargin = 5;
     
     [UIView beginAnimations:@"SlideDown" context:nil];
@@ -48,7 +56,7 @@
     
     int currentCard = 1; // we're moving down by one
     int currentRow = 0;
-
+    
     // TODO: make this dynamic based on card size?
     int numCardsPerRow = 5;
     for(GABTimedCard* aCard in cards){
@@ -59,19 +67,17 @@
         } else {
             newX = currentCard * cardWidth + (currentCard+1) * xMargin;
         }
-
+        
         if(currentCard+1 > numCardsPerRow){
             currentRow = 1;
         }
         
-        int newY = 20 + (currentRow*(cardHeight+ 20));
+        int newY = 70 + (currentRow*(cardHeight+ 20));
         aCard.frame = CGRectMake(newX, newY, cardWidth, cardHeight);
         currentCard++;
     }
     [UIView commitAnimations];
-    
-    
-    [super touchesEnded: touches withEvent: event];
+
 }
 
 -(void) cardsDoneSliding:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
@@ -79,7 +85,7 @@
     int xMargin = 5;
     
     
-    GABTimedCard* newCard = [[GABTimedCard alloc] initWithFrame:CGRectMake(xMargin, 20, cardWidth, cardHeight)];
+    GABTimedCard* newCard = [[GABTimedCard alloc] initWithFrame:CGRectMake(xMargin, 70, cardWidth, cardHeight)];
     
     int selectedOption = arc4random() % [cardOptions count];
     [newCard setFromCardOptions:[cardOptions objectAtIndex:selectedOption]];

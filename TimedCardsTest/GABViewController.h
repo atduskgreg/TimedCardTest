@@ -18,6 +18,8 @@
     NSArray* cardOptions;
 }
 
+-(IBAction)drawCard:(id)sender;
 -(void) cardsDoneSliding:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context;
+-(int) turn;
 
 @end
