@@ -14,10 +14,17 @@
     int cardWidth;
     int cardHeight;
     
-    NSMutableArray* cards;
     NSArray* cardOptions;
+    
+    int turn;
+
 }
 
+@property (nonatomic, retain) NSMutableArray* cards;
+;
+
+
+-(void) updateCardPositions:(BOOL)withNewCard;
 -(IBAction)drawCard:(id)sender;
 -(void) cardsDoneSliding:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context;
 -(int) turn;

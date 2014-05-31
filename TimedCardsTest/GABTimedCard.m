@@ -7,6 +7,8 @@
 //
 
 #import "GABTimedCard.h"
+#import "GABViewController.h"
+
 
 @implementation GABTimedCard
 
@@ -25,6 +27,26 @@
         self.layer.cornerRadius = 10;
         self.layer.masksToBounds = YES;
         [self setBackgroundColor:[UIColor whiteColor]];
+        cardWidth = 199;
+        cardHeight = cardWidth*1.55;
+        
+        
+        self.userInteractionEnabled = YES; // for swipe detection
+        
+        UISwipeGestureRecognizer * swipeUp=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss:)];
+        swipeUp.direction=UISwipeGestureRecognizerDirectionUp;
+        [self addGestureRecognizer:swipeUp];
+        UISwipeGestureRecognizer * swipeDown=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss:)];
+        swipeDown.direction=UISwipeGestureRecognizerDirectionDown;
+        [self addGestureRecognizer:swipeDown];
+        UISwipeGestureRecognizer * swipeLeft=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss:)];
+        swipeLeft.direction=UISwipeGestureRecognizerDirectionLeft;
+        [self addGestureRecognizer:swipeLeft];
+        UISwipeGestureRecognizer * swipeRight=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss:)];
+        swipeRight.direction=UISwipeGestureRecognizerDirectionRight;
+        [self addGestureRecognizer:swipeRight];
+        
+        
         
         timeDisplay = [[UILabel alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height-2)];
         [timeDisplay setTextColor:[UIColor blackColor]];
@@ -34,19 +56,44 @@
         
         [self addSubview:timeDisplay];
         
-        
-//        [self setCompletionText:@"All your base are belong to us."];
-//        [self setDuration:5];
-//        [self start];
     }
     return self;
 }
 
+-(void)dismiss:(UISwipeGestureRecognizer*)gestureRecognizer
+{
+    [UIView beginAnimations:@"SlideOff" context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    [UIView setAnimationDuration:0.2f];
+    
+    int newX = self.frame.origin.x;
+    int newY = self.frame.origin.y;
+    // amimate off
+    if(gestureRecognizer.direction == UISwipeGestureRecognizerDirectionDown){
+        newY = 1000;
+    }
+    if(gestureRecognizer.direction == UISwipeGestureRecognizerDirectionUp){
+        newY = -1000;
+    }
+    if(gestureRecognizer.direction == UISwipeGestureRecognizerDirectionLeft){
+        newX = -2000;
+    }
+
+    if(gestureRecognizer.direction == UISwipeGestureRecognizerDirectionRight){
+        newX = 2000;
+    }
+    
+    self.frame = CGRectMake(newX, newY, cardWidth, cardHeight);
+    
+    [UIView commitAnimations];
+    
+    [[[self cardController] cards] removeObject:self];
+    [[self cardController] updateCardPositions:NO];
+    // animate array into correct positions
+}
+
 -(void) setFromCardOptions:(NSDictionary*)options
 {
-    NSLog(@"creating: %@", [options objectForKey:@"durationType"]);
-    
-    
     if([[options objectForKey:@"durationType"] isEqualToString:@"turns"]){
         isTurnBased = YES;
         turnDuration = [[options objectForKey:@"duration"] integerValue];
@@ -74,9 +121,8 @@
 
 -(void) start;
 {
-    NSLog(@"start: %i", isTurnBased);
     if(isTurnBased){
-        turnStartedAt = [_cards count];
+        turnStartedAt = [[self cardController] turn];
     } else{
         timeStartedAt = [NSDate date];
 
@@ -86,7 +132,7 @@
 -(void) checkExpiration:(NSTimer*)timer{
     
     if(isTurnBased){
-        int elapsedTurns = [_cards count] - turnStartedAt;
+        int elapsedTurns = [[self cardController] turn] - turnStartedAt;
         if(elapsedTurns == turnDuration){
             [timeDisplay setFont:[UIFont fontWithName: @"HelveticaNeue-Light" size: 12.0f]];
             timeDisplay.text = self.completionText;

@@ -21,10 +21,11 @@
     NSDictionary *cardDictionary = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
     cardOptions = cardDictionary[@"Cards"];
     
-    cards = [[NSMutableArray alloc] init];
+    _cards = [[NSMutableArray alloc] init];
     
     cardWidth = 199;
     cardHeight = cardWidth*1.55;
+    turn = 0;
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,7 +36,7 @@
 
 -(int) turn
 {
-    return [cards count];
+    return turn;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -44,7 +45,7 @@
     [super touchesEnded: touches withEvent: event];
 }
 
--(IBAction)drawCard:(id)sender
+-(void) updateCardPositions:(BOOL)withNewCard
 {
     int xMargin = 5;
     
@@ -52,14 +53,16 @@
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
     [UIView setAnimationDuration:0.2f];
     [UIView setAnimationDelegate:self];
-    [UIView setAnimationDidStopSelector:@selector(cardsDoneSliding:finished:context:)];
+    if(withNewCard){
+        [UIView setAnimationDidStopSelector:@selector(cardsDoneSliding:finished:context:)];
+    }
     
     int currentCard = 1; // we're moving down by one
     int currentRow = 0;
     
     // TODO: make this dynamic based on card size?
     int numCardsPerRow = 5;
-    for(GABTimedCard* aCard in cards){
+    for(GABTimedCard* aCard in _cards){
         int newX;
         if(currentCard+1 > numCardsPerRow){
             int cardPos = currentCard - numCardsPerRow;
@@ -80,17 +83,23 @@
 
 }
 
+-(IBAction)drawCard:(id)sender
+{
+    [self updateCardPositions:YES];
+    turn++;
+}
+
 -(void) cardsDoneSliding:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
 {
     int xMargin = 5;
     
     
     GABTimedCard* newCard = [[GABTimedCard alloc] initWithFrame:CGRectMake(xMargin, 70, cardWidth, cardHeight)];
-    newCard.cards = cards;
+    [newCard setCardController:self];
     
     int selectedOption = arc4random() % [cardOptions count];
     [newCard setFromCardOptions:[cardOptions objectAtIndex:selectedOption]];    
-    [cards insertObject:newCard atIndex:0];
+    [_cards insertObject:newCard atIndex:0];
     [[self view] addSubview:newCard];
     [newCard start];
 
