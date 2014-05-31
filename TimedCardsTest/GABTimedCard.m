@@ -76,10 +76,10 @@
 {
     NSLog(@"start: %i", isTurnBased);
     if(isTurnBased){
-        timeStartedAt = [NSDate date];
-    } else{
-        NSLog(@"card duration: %i", [_cards count]);
         turnStartedAt = [_cards count];
+    } else{
+        timeStartedAt = [NSDate date];
+
     }
 }
 
