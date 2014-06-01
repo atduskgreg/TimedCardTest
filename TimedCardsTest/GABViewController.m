@@ -97,8 +97,10 @@
     GABTimedCard* newCard = [[GABTimedCard alloc] initWithFrame:CGRectMake(xMargin, 70, cardWidth, cardHeight)];
     [newCard setCardController:self];
     
-    int selectedOption = arc4random() % [cardOptions count];
-    [newCard setFromCardOptions:[cardOptions objectAtIndex:selectedOption]];    
+    
+    [newCard setRandomly];
+    // int selectedOption = arc4random() % [cardOptions count];
+    //[newCard setFromCardOptions:[cardOptions objectAtIndex:selectedOption]];
     [_cards insertObject:newCard atIndex:0];
     [[self view] addSubview:newCard];
     [newCard start];

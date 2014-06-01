@@ -30,6 +30,7 @@
         cardWidth = 199;
         cardHeight = cardWidth*1.55;
         
+        isExpired = NO;
         
         self.userInteractionEnabled = YES; // for swipe detection
         
@@ -48,12 +49,19 @@
         
         
         
-        timeDisplay = [[UILabel alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height-2)];
+        timeDisplay = [[UILabel alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height/2)];
         [timeDisplay setTextColor:[UIColor blackColor]];
         [timeDisplay setBackgroundColor:[UIColor clearColor]];
-        [timeDisplay setFont:[UIFont fontWithName: @"HelveticaNeue-Light" size: 50.0f]];
+        [timeDisplay setFont:[UIFont fontWithName: @"HelveticaNeue-Light" size: 30.0f]];
         [timeDisplay setNumberOfLines:0]; // for wordwrap
         
+        attackDisplay = [[UILabel alloc] initWithFrame:CGRectMake(frame.origin.x, frame.size.width/2, frame.size.width, frame.size.height/2)];
+        [attackDisplay setTextColor:[UIColor blackColor]];
+        [attackDisplay setBackgroundColor:[UIColor clearColor]];
+        [attackDisplay setFont:[UIFont fontWithName: @"HelveticaNeue-Light" size: 20.0f]];
+        [attackDisplay setNumberOfLines:0]; // for wordwrap
+        
+        [self addSubview:attackDisplay];
         [self addSubview:timeDisplay];
         
     }
@@ -62,34 +70,74 @@
 
 -(void)dismiss:(UISwipeGestureRecognizer*)gestureRecognizer
 {
-    [UIView beginAnimations:@"SlideOff" context:nil];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-    [UIView setAnimationDuration:0.2f];
+    if(isExpired){
+        [UIView beginAnimations:@"SlideOff" context:nil];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+        [UIView setAnimationDuration:0.2f];
     
-    int newX = self.frame.origin.x;
-    int newY = self.frame.origin.y;
-    // amimate off
-    if(gestureRecognizer.direction == UISwipeGestureRecognizerDirectionDown){
-        newY = 1000;
-    }
-    if(gestureRecognizer.direction == UISwipeGestureRecognizerDirectionUp){
-        newY = -1000;
-    }
-    if(gestureRecognizer.direction == UISwipeGestureRecognizerDirectionLeft){
-        newX = -2000;
-    }
+        int newX = self.frame.origin.x;
+        int newY = self.frame.origin.y;
+        // amimate off
+        if(gestureRecognizer.direction == UISwipeGestureRecognizerDirectionDown){
+            newY = 1000;
+        }
+        if(gestureRecognizer.direction == UISwipeGestureRecognizerDirectionUp){
+            newY = -1000;
+        }
+        if(gestureRecognizer.direction == UISwipeGestureRecognizerDirectionLeft){
+            newX = -2000;
+        }
 
-    if(gestureRecognizer.direction == UISwipeGestureRecognizerDirectionRight){
-        newX = 2000;
+        if(gestureRecognizer.direction == UISwipeGestureRecognizerDirectionRight){
+            newX = 2000;
+        }
+    
+        self.frame = CGRectMake(newX, newY, cardWidth, cardHeight);
+    
+        [UIView commitAnimations];
+    
+        [[[self cardController] cards] removeObject:self];
+        [[self cardController] updateCardPositions:NO];
+    }
+}
+-(void) setRandomly
+{
+    int maxDamage = 5;
+    
+    isTurnBased = NO;
+    
+    NSArray* times = @[@60, @90, @120, @180, @30];
+    timeDuration = [[times objectAtIndex:(arc4random() % [times count])] integerValue];
+    
+    NSArray* targets = @[@"police", @"people", @"bank"];
+    int damage = arc4random() % maxDamage;
+    int t = arc4random() % [targets count];
+    
+    _completionText = [NSString stringWithFormat:@"%@ takes %i damage.",[targets objectAtIndex:t], damage];
+    
+    NSArray* colors = @[@"blue", @"green", @"pink"];
+    int minAttack = 3;
+    int addAttack = 3;
+    
+    int attack = minAttack + (arc4random() % addAttack);
+    
+    // corresponding to each entry in colors:
+    NSMutableArray* colorAttacks = [[NSMutableArray alloc] initWithArray:@[@0,@0,@0]];
+    for(int i = 0; i < attack; i++){
+        int chosenColor = arc4random() % [colors count];
+        colorAttacks[chosenColor] = @( [ colorAttacks[chosenColor] intValue] + 1 );
     }
     
-    self.frame = CGRectMake(newX, newY, cardWidth, cardHeight);
+    NSMutableString* attackMessage = [[NSMutableString alloc] init];
+    for(int i = 0; i < [colorAttacks count]; i++){
+        if([[colorAttacks objectAtIndex:i] integerValue] > 0){
+            [attackMessage appendString:[NSString stringWithFormat:@"%@:%i ", [colors objectAtIndex:i], [[colorAttacks objectAtIndex:i] integerValue]]];
+        }
+    }
     
-    [UIView commitAnimations];
+    NSLog(@"%@", attackMessage);
     
-    [[[self cardController] cards] removeObject:self];
-    [[self cardController] updateCardPositions:NO];
-    // animate array into correct positions
+    [attackDisplay setText:attackMessage];
 }
 
 -(void) setFromCardOptions:(NSDictionary*)options
@@ -137,6 +185,7 @@
             [timeDisplay setFont:[UIFont fontWithName: @"HelveticaNeue-Light" size: 12.0f]];
             timeDisplay.text = self.completionText;
             [timer invalidate];
+            isExpired = YES;
 
         } else {
             timeDisplay.text = [[NSString alloc] initWithFormat:@"%i", turnDuration - elapsedTurns];
@@ -149,6 +198,7 @@
             [timeDisplay setFont:[UIFont fontWithName: @"HelveticaNeue-Light" size: 12.0f]];
             timeDisplay.text = self.completionText;
             [timer invalidate];
+            isExpired = YES;
             
         } else {
             timeDisplay.text = [[NSString alloc] initWithFormat:@"%.02f",timeDuration - [nowDate timeIntervalSinceDate:timeStartedAt]];
