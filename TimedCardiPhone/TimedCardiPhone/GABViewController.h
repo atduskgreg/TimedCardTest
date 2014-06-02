@@ -15,8 +15,10 @@
     int turnsUntilVillain;
     BOOL cardInPlay;
     GABTimedCard* currentCard;
+    IBOutlet UILabel* turnCounter;
 }
 
 -(IBAction)drawCard:(id)sender;
+
 
 @end

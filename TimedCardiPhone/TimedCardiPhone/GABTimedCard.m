@@ -61,6 +61,9 @@
 
 -(void) stopTimer:(UITapGestureRecognizer *)gestureRecognizer
 {
+    if(isDefeated || isComplete){
+        [self removeFromSuperview];
+    }
     isDefeated = YES;
 
 }
