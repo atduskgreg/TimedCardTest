@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+<key>Cards</key>
+<array>
+    <dict>
+        <key>duration</key>
+        <integer>180</integer>
+        <key>durationType</key>
+        <string>time</string>
+        <key>description</key>
+        <string>Professor Sloth
+            
+Each player removes one die from the die pool while Professor Sloth is in play.</string>
+        <key>completionText</key>
+        <string>Boom!
+Remove the tile occupied by Dr. Sloth from the city.</string>
+    </dict>
+    <dict>
+        <key>duration</key>
+        <integer>120</integer>
+        <key>durationType</key>
+        <string>time</string>
+        <key>description</key>
+        <string>General Weakness
+            
+Players must spend 1 movement die of the tile color to remove each baddie.</string>
+        <key>completionText</key>
+        <string>Boom!
+Remove the tile occupied by General Weakness from the city.</string>
+    </dict>
+    <dict>
+        <key>duration</key>
+        <integer>300</integer>
+        <key>durationType</key>
+        <string>time</string>
+        <key>description</key>
+        <string>Dr. Darkness
+            
+Players must keep their eyes closed during their turn rolling for movement.</string>
+        <key>completionText</key>
+        <string>Boom!
+Remove the tile occupied by Dr. Darkness from the city.</string>
+    </dict>
+    </array>
+</dict>
+</plist>

@@ -1,0 +1,493 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		372801A1193BA62F00A11BF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372801A0193BA62F00A11BF7 /* Foundation.framework */; };
+		372801A3193BA62F00A11BF7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372801A2193BA62F00A11BF7 /* CoreGraphics.framework */; };
+		372801A5193BA62F00A11BF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372801A4193BA62F00A11BF7 /* UIKit.framework */; };
+		372801AB193BA62F00A11BF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 372801A9193BA62F00A11BF7 /* InfoPlist.strings */; };
+		372801AD193BA62F00A11BF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 372801AC193BA62F00A11BF7 /* main.m */; };
+		372801B1193BA62F00A11BF7 /* GABAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 372801B0193BA62F00A11BF7 /* GABAppDelegate.m */; };
+		372801B4193BA62F00A11BF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372801B2193BA62F00A11BF7 /* Main.storyboard */; };
+		372801B7193BA62F00A11BF7 /* GABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372801B6193BA62F00A11BF7 /* GABViewController.m */; };
+		372801B9193BA62F00A11BF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 372801B8193BA62F00A11BF7 /* Images.xcassets */; };
+		372801C0193BA63000A11BF7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372801BF193BA63000A11BF7 /* XCTest.framework */; };
+		372801C1193BA63000A11BF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372801A0193BA62F00A11BF7 /* Foundation.framework */; };
+		372801C2193BA63000A11BF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372801A4193BA62F00A11BF7 /* UIKit.framework */; };
+		372801CA193BA63000A11BF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 372801C8193BA63000A11BF7 /* InfoPlist.strings */; };
+		372801CC193BA63000A11BF7 /* TimedCardiPhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 372801CB193BA63000A11BF7 /* TimedCardiPhoneTests.m */; };
+		372801D7193BA64A00A11BF7 /* GABTimedCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 372801D6193BA64A00A11BF7 /* GABTimedCard.m */; };
+		372801D9193BA66100A11BF7 /* CardOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 372801D8193BA66100A11BF7 /* CardOptions.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		372801C3193BA63000A11BF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37280195193BA62F00A11BF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3728019C193BA62F00A11BF7;
+			remoteInfo = TimedCardiPhone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3728019D193BA62F00A11BF7 /* TimedCardiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimedCardiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		372801A0193BA62F00A11BF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		372801A2193BA62F00A11BF7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		372801A4193BA62F00A11BF7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		372801A8193BA62F00A11BF7 /* TimedCardiPhone-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimedCardiPhone-Info.plist"; sourceTree = "<group>"; };
+		372801AA193BA62F00A11BF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		372801AC193BA62F00A11BF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		372801AE193BA62F00A11BF7 /* TimedCardiPhone-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TimedCardiPhone-Prefix.pch"; sourceTree = "<group>"; };
+		372801AF193BA62F00A11BF7 /* GABAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GABAppDelegate.h; sourceTree = "<group>"; };
+		372801B0193BA62F00A11BF7 /* GABAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GABAppDelegate.m; sourceTree = "<group>"; };
+		372801B3193BA62F00A11BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		372801B5193BA62F00A11BF7 /* GABViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GABViewController.h; sourceTree = "<group>"; };
+		372801B6193BA62F00A11BF7 /* GABViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GABViewController.m; sourceTree = "<group>"; };
+		372801B8193BA62F00A11BF7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		372801BE193BA63000A11BF7 /* TimedCardiPhoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimedCardiPhoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		372801BF193BA63000A11BF7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		372801C7193BA63000A11BF7 /* TimedCardiPhoneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimedCardiPhoneTests-Info.plist"; sourceTree = "<group>"; };
+		372801C9193BA63000A11BF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		372801CB193BA63000A11BF7 /* TimedCardiPhoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimedCardiPhoneTests.m; sourceTree = "<group>"; };
+		372801D5193BA64A00A11BF7 /* GABTimedCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GABTimedCard.h; sourceTree = "<group>"; };
+		372801D6193BA64A00A11BF7 /* GABTimedCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GABTimedCard.m; sourceTree = "<group>"; };
+		372801D8193BA66100A11BF7 /* CardOptions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CardOptions.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3728019A193BA62F00A11BF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				372801A3193BA62F00A11BF7 /* CoreGraphics.framework in Frameworks */,
+				372801A5193BA62F00A11BF7 /* UIKit.framework in Frameworks */,
+				372801A1193BA62F00A11BF7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		372801BB193BA62F00A11BF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				372801C0193BA63000A11BF7 /* XCTest.framework in Frameworks */,
+				372801C2193BA63000A11BF7 /* UIKit.framework in Frameworks */,
+				372801C1193BA63000A11BF7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37280194193BA62F00A11BF7 = {
+			isa = PBXGroup;
+			children = (
+				372801A6193BA62F00A11BF7 /* TimedCardiPhone */,
+				372801C5193BA63000A11BF7 /* TimedCardiPhoneTests */,
+				3728019F193BA62F00A11BF7 /* Frameworks */,
+				3728019E193BA62F00A11BF7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3728019E193BA62F00A11BF7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3728019D193BA62F00A11BF7 /* TimedCardiPhone.app */,
+				372801BE193BA63000A11BF7 /* TimedCardiPhoneTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3728019F193BA62F00A11BF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				372801A0193BA62F00A11BF7 /* Foundation.framework */,
+				372801A2193BA62F00A11BF7 /* CoreGraphics.framework */,
+				372801A4193BA62F00A11BF7 /* UIKit.framework */,
+				372801BF193BA63000A11BF7 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		372801A6193BA62F00A11BF7 /* TimedCardiPhone */ = {
+			isa = PBXGroup;
+			children = (
+				372801D5193BA64A00A11BF7 /* GABTimedCard.h */,
+				372801D6193BA64A00A11BF7 /* GABTimedCard.m */,
+				372801AF193BA62F00A11BF7 /* GABAppDelegate.h */,
+				372801D8193BA66100A11BF7 /* CardOptions.plist */,
+				372801B0193BA62F00A11BF7 /* GABAppDelegate.m */,
+				372801B2193BA62F00A11BF7 /* Main.storyboard */,
+				372801B5193BA62F00A11BF7 /* GABViewController.h */,
+				372801B6193BA62F00A11BF7 /* GABViewController.m */,
+				372801B8193BA62F00A11BF7 /* Images.xcassets */,
+				372801A7193BA62F00A11BF7 /* Supporting Files */,
+			);
+			path = TimedCardiPhone;
+			sourceTree = "<group>";
+		};
+		372801A7193BA62F00A11BF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				372801A8193BA62F00A11BF7 /* TimedCardiPhone-Info.plist */,
+				372801A9193BA62F00A11BF7 /* InfoPlist.strings */,
+				372801AC193BA62F00A11BF7 /* main.m */,
+				372801AE193BA62F00A11BF7 /* TimedCardiPhone-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		372801C5193BA63000A11BF7 /* TimedCardiPhoneTests */ = {
+			isa = PBXGroup;
+			children = (
+				372801CB193BA63000A11BF7 /* TimedCardiPhoneTests.m */,
+				372801C6193BA63000A11BF7 /* Supporting Files */,
+			);
+			path = TimedCardiPhoneTests;
+			sourceTree = "<group>";
+		};
+		372801C6193BA63000A11BF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				372801C7193BA63000A11BF7 /* TimedCardiPhoneTests-Info.plist */,
+				372801C8193BA63000A11BF7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3728019C193BA62F00A11BF7 /* TimedCardiPhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 372801CF193BA63000A11BF7 /* Build configuration list for PBXNativeTarget "TimedCardiPhone" */;
+			buildPhases = (
+				37280199193BA62F00A11BF7 /* Sources */,
+				3728019A193BA62F00A11BF7 /* Frameworks */,
+				3728019B193BA62F00A11BF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimedCardiPhone;
+			productName = TimedCardiPhone;
+			productReference = 3728019D193BA62F00A11BF7 /* TimedCardiPhone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		372801BD193BA62F00A11BF7 /* TimedCardiPhoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 372801D2193BA63000A11BF7 /* Build configuration list for PBXNativeTarget "TimedCardiPhoneTests" */;
+			buildPhases = (
+				372801BA193BA62F00A11BF7 /* Sources */,
+				372801BB193BA62F00A11BF7 /* Frameworks */,
+				372801BC193BA62F00A11BF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				372801C4193BA63000A11BF7 /* PBXTargetDependency */,
+			);
+			name = TimedCardiPhoneTests;
+			productName = TimedCardiPhoneTests;
+			productReference = 372801BE193BA63000A11BF7 /* TimedCardiPhoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37280195193BA62F00A11BF7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = GAB;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Greg Borenstein";
+				TargetAttributes = {
+					3728019C193BA62F00A11BF7 = {
+						DevelopmentTeam = BX2YKHFK59;
+					};
+					372801BD193BA62F00A11BF7 = {
+						TestTargetID = 3728019C193BA62F00A11BF7;
+					};
+				};
+			};
+			buildConfigurationList = 37280198193BA62F00A11BF7 /* Build configuration list for PBXProject "TimedCardiPhone" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 37280194193BA62F00A11BF7;
+			productRefGroup = 3728019E193BA62F00A11BF7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3728019C193BA62F00A11BF7 /* TimedCardiPhone */,
+				372801BD193BA62F00A11BF7 /* TimedCardiPhoneTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3728019B193BA62F00A11BF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				372801B9193BA62F00A11BF7 /* Images.xcassets in Resources */,
+				372801D9193BA66100A11BF7 /* CardOptions.plist in Resources */,
+				372801AB193BA62F00A11BF7 /* InfoPlist.strings in Resources */,
+				372801B4193BA62F00A11BF7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		372801BC193BA62F00A11BF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				372801CA193BA63000A11BF7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37280199193BA62F00A11BF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				372801D7193BA64A00A11BF7 /* GABTimedCard.m in Sources */,
+				372801AD193BA62F00A11BF7 /* main.m in Sources */,
+				372801B1193BA62F00A11BF7 /* GABAppDelegate.m in Sources */,
+				372801B7193BA62F00A11BF7 /* GABViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		372801BA193BA62F00A11BF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				372801CC193BA63000A11BF7 /* TimedCardiPhoneTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		372801C4193BA63000A11BF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3728019C193BA62F00A11BF7 /* TimedCardiPhone */;
+			targetProxy = 372801C3193BA63000A11BF7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		372801A9193BA62F00A11BF7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				372801AA193BA62F00A11BF7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		372801B2193BA62F00A11BF7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				372801B3193BA62F00A11BF7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		372801C8193BA63000A11BF7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				372801C9193BA63000A11BF7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		372801CD193BA63000A11BF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		372801CE193BA63000A11BF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		372801D0193BA63000A11BF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TimedCardiPhone/TimedCardiPhone-Prefix.pch";
+				INFOPLIST_FILE = "TimedCardiPhone/TimedCardiPhone-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		372801D1193BA63000A11BF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TimedCardiPhone/TimedCardiPhone-Prefix.pch";
+				INFOPLIST_FILE = "TimedCardiPhone/TimedCardiPhone-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		372801D3193BA63000A11BF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TimedCardiPhone.app/TimedCardiPhone";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TimedCardiPhone/TimedCardiPhone-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TimedCardiPhoneTests/TimedCardiPhoneTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		372801D4193BA63000A11BF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TimedCardiPhone.app/TimedCardiPhone";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TimedCardiPhone/TimedCardiPhone-Prefix.pch";
+				INFOPLIST_FILE = "TimedCardiPhoneTests/TimedCardiPhoneTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37280198193BA62F00A11BF7 /* Build configuration list for PBXProject "TimedCardiPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				372801CD193BA63000A11BF7 /* Debug */,
+				372801CE193BA63000A11BF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		372801CF193BA63000A11BF7 /* Build configuration list for PBXNativeTarget "TimedCardiPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				372801D0193BA63000A11BF7 /* Debug */,
+				372801D1193BA63000A11BF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		372801D2193BA63000A11BF7 /* Build configuration list for PBXNativeTarget "TimedCardiPhoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				372801D3193BA63000A11BF7 /* Debug */,
+				372801D4193BA63000A11BF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 37280195193BA62F00A11BF7 /* Project object */;
+}
