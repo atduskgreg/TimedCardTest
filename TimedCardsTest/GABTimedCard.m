@@ -115,7 +115,7 @@
     
     _completionText = [NSString stringWithFormat:@"%@ takes %i damage.",[targets objectAtIndex:t], damage];
     
-    NSArray* colors = @[@"blue", @"green", @"pink"];
+    NSArray* colors = @[@"blue", @"green", @"orange"];
     int minAttack = 3;
     int addAttack = 3;
     
