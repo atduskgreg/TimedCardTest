@@ -25,11 +25,24 @@
     IBOutlet UILabel* baddiesSix;
     
     IBOutlet UILabel* baddieInstructions;
+    
+    IBOutlet UILabel* redScoreLabel;
+    IBOutlet UILabel* greenScoreLabel;
+    IBOutlet UILabel* blueScoreLabel;
+
+    int redScore;
+    int greenScore;
+    int blueScore;
+    
+    
     NSMutableArray* tiles;
     NSArray* tileButtons;
+    NSMutableDictionary* colorScores;
     
     int heroLocation;
 }
+
+-(void) applyDamage:(int)damage toColor:(NSString*)color;
 
 -(IBAction)rollBaddie:(id)sender;
 -(IBAction)moveHero:(id)sender;

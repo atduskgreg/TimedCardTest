@@ -142,9 +142,30 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Na4-qF-b0k">
-                                <rect key="frame" x="58" y="445" width="204" height="21"/>
+                                <rect key="frame" x="58" y="445" width="204" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBd-Od-no9">
+                                <rect key="frame" x="38" y="510" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGM-Wh-1gI">
+                                <rect key="frame" x="145" y="510" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K39-wA-XGn">
+                                <rect key="frame" x="245" y="510" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -159,12 +180,15 @@
                         <outlet property="baddiesSix" destination="ynK-sC-KzV" id="Z0h-nw-33q"/>
                         <outlet property="baddiesThree" destination="1gW-kO-Zbf" id="M1s-Nh-42M"/>
                         <outlet property="baddiesTwo" destination="dGh-Tb-hZ0" id="m7p-Kl-Kzc"/>
+                        <outlet property="blueScoreLabel" destination="yGM-Wh-1gI" id="gao-jl-CsR"/>
                         <outlet property="buttonFive" destination="PE1-fL-x0X" id="7iU-yV-jBz"/>
                         <outlet property="buttonFour" destination="AcJ-Av-DJZ" id="jtG-Wz-ckU"/>
                         <outlet property="buttonOne" destination="odn-Jm-hEI" id="qRg-04-Cg5"/>
                         <outlet property="buttonSix" destination="iqK-SU-1bI" id="sXW-qp-vhY"/>
                         <outlet property="buttonThree" destination="50L-zz-gJj" id="ER1-Pl-aQW"/>
                         <outlet property="buttonTwo" destination="OMA-xJ-NF5" id="tMA-xE-tTh"/>
+                        <outlet property="greenScoreLabel" destination="qBd-Od-no9" id="NTR-fN-f21"/>
+                        <outlet property="redScoreLabel" destination="K39-wA-XGn" id="eDk-Y9-9Wb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

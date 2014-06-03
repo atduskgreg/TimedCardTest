@@ -18,6 +18,22 @@
 {
     [super viewDidLoad];
     
+    [baddieInstructions setNumberOfLines:0]; // for wordwrap
+    
+    colorScores = [[NSMutableDictionary alloc] init];
+    
+    [colorScores setObject:@0 forKey:@"red"];
+    [colorScores setObject:@0 forKey:@"green"];
+    [colorScores setObject:@0 forKey:@"blue"];
+    
+    redScoreLabel.backgroundColor = [UIColor redColor];
+    greenScoreLabel.backgroundColor = [UIColor greenColor];
+    blueScoreLabel.backgroundColor = [UIColor blueColor];
+    
+    redScore = 20;
+    greenScore = 20;
+    blueScore = 20;
+
     tiles = [[NSMutableArray alloc] init]; // array position is tile number
     
     tileButtons = @[buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix];
@@ -79,14 +95,45 @@
 -(IBAction)rollBaddie:(id)sender
 {
     int tileLocation = arc4random() % 6;
-    NSMutableDictionary* tile = [tiles objectAtIndex:tileLocation];
     
-    int newBaddies = [[tile objectForKey:@"baddies" ] intValue] + 1;
-    [tile setObject:[NSNumber numberWithInt:newBaddies] forKey:@"baddies"];
-    UILabel* tileLabel = [tile objectForKey:@"countLabel"];
-    tileLabel.text = [NSString stringWithFormat:@"%i", newBaddies];
+    if(tileLocation != heroLocation){
     
-    baddieInstructions.text = [NSString stringWithFormat:@"Baddie arrives on TILE %i.", tileLocation+1];
+        NSMutableDictionary* tile = [tiles objectAtIndex:tileLocation];
+        NSLog(@"here?");
+        int newBaddies = [[tile objectForKey:@"baddies" ] intValue] + 1;
+        [tile setObject:[NSNumber numberWithInt:newBaddies] forKey:@"baddies"];
+        [self applyDamage:newBaddies toColor:[tile objectForKey:@"color"]];
+        
+        
+        UILabel* tileLabel = [tile objectForKey:@"countLabel"];
+        tileLabel.text = [NSString stringWithFormat:@"%i", newBaddies];
+        baddieInstructions.text = [NSString stringWithFormat:@"Baddie arrives on TILE %i. %@ takes %i damage.", tileLocation+1,[tile objectForKey:@"color"] ,newBaddies];
+
+    } else {
+        baddieInstructions.text = [NSString stringWithFormat:@"Baddie arrives on TILE %i. Biffed away by hero!", tileLocation+1];
+
+    }
+}
+
+-(void) applyDamage:(int)damage toColor:(NSString*)color
+{
+    if([color isEqualToString:@"red"]){
+        redScore = redScore - damage;
+        redScoreLabel.text = [NSString stringWithFormat:@"%i", redScore];
+    }
+    
+    if([color isEqualToString:@"green"]){
+        greenScore = greenScore - damage;
+        greenScoreLabel.text = [NSString stringWithFormat:@"%i", greenScore];
+
+    }
+    
+    if([color isEqualToString:@"blue"]){
+        blueScore = blueScore - damage;
+        blueScoreLabel.text = [NSString stringWithFormat:@"%i", blueScore];
+
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
