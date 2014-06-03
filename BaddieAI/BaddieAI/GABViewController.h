@@ -44,6 +44,13 @@
 
 -(void) applyDamage:(int)damage toColor:(NSString*)color;
 -(void) clearBaddiesFromTile:(int)tileNum;
++(BOOL) tile:(int)tileNum isNeighborOf:(int)neighborNum;
+-(void) moveBaddieFromTile:(int)fromTile toTile:(int)toTile;
+-(NSMutableDictionary*) tileWithMostBaddies;
+
+-(int) nextTileFrom:(int)fromTile toTile:(int)toTile;
+
+-(void) executeBaddieAI:(int)tileNum;
 
 -(IBAction)rollBaddie:(id)sender;
 -(IBAction)moveHero:(id)sender;

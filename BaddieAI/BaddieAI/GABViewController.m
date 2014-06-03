@@ -90,6 +90,10 @@
     UIButton* tileButton = tileButtons[heroLocation];
     [tileButton.layer setBorderColor:[[UIColor grayColor] CGColor]];
     [tileButton setNeedsDisplay];
+    
+    int moveDestination = 3;
+    
+    NSLog(@"to move from %i to %i, go to: %i", heroLocation, moveDestination, [self nextTileFrom:heroLocation toTile:moveDestination]);
 
 }
 
@@ -142,7 +146,189 @@
         blueScoreLabel.text = [NSString stringWithFormat:@"%i", blueScore];
 
     }
+}
+
+-(void) executeBaddieAI:(int)tileNum
+{
+    NSMutableDictionary* tile = tiles[tileNum];
     
+    NSMutableDictionary* baddestTile = [self tileWithMostBaddies];
+    
+    // while there are greater than 0 baddies on the tile
+    if([[tile objectForKey:@"baddies"] intValue] > 0){
+    // if there are more baddies on another tile than my tile
+        if(![tile isEqual:baddestTile]){
+            if([[tile objectForKey:@"baddies"] intValue]  < [[baddestTile objectForKey:@"baddies"] intValue]){
+                //  move one tile towards the tile with the highest number of baddies
+                
+                
+                
+            } else { // if I'm tied for highest
+                
+                //   whichever tile is closest to the hero sends baddies
+            }
+            
+        }
+    
+    }
+    
+    // if my move would put me onto the hero's square
+    //  do something else instead
+}
+
+-(int) nextTileFrom:(int)fromTile toTile:(int)toTile
+{
+    int result = fromTile;
+
+    NSArray* rows = @[@0,@0,@1,@1,@2,@2];
+    NSArray* cols = @[@0, @1, @0, @1, @0, @1];
+    
+    NSInteger* fromCol = [cols[fromTile] intValue];
+    NSInteger* fromRow = [rows[fromTile] intValue];
+    
+    NSInteger* toCol = [cols[toTile] intValue];
+    NSInteger* toRow = [rows[toTile] intValue];
+    
+    
+    if(fromCol == toCol){
+        // if they're in the same col they must be in different rows
+        if(fromRow > toRow){
+            // move up by 1 row
+            result = fromTile - 2;
+        } else {
+            // move down by 1 row
+            result = fromTile + 2;
+        }
+        
+    } else {
+        
+        if(fromRow == toRow){ // different cols but the same row
+            // we just move into the other row
+            if(fromCol == 0){
+                result = fromTile + 1;
+            } else {
+                result = fromTile - 1;
+            }
+
+        } else { // different cols and different rows
+            // randomly decide whether to move row or column first
+            if(arc4random() % 2 == 0){
+                if(fromCol == 0){
+                    result = fromTile + 1;
+                } else {
+                    result = fromTile - 1;
+                }
+                
+            } else {
+                if(fromRow > toRow){
+                    // move up by 1 row
+                    result = fromTile - 2;
+                } else {
+                    // move down by 1 row
+                    result = fromTile + 2;
+                }
+                
+            }
+            
+        }
+    }
+    
+//    if(fromTile % 2){ // left column
+//        if(toTile % 2){ // same column
+//            if(fromTile > toTile){
+//                result = fromTile - 2;
+//            } else {
+//                result = toTile + 2;
+//            }
+//        } else { // different column
+//        
+//        }
+//    
+//    } else { // right column
+//        if(toTile % 2){ // different column
+//            
+//        } else { // same column
+//            if(fromTile > toTile){
+//                result = fromTile - 2;
+//            } else {
+//                result = toTile + 2;
+//            }
+//        }
+//    }
+    
+    return result;
+}
+
+-(NSMutableDictionary*) tileWithMostBaddies
+{
+    NSMutableDictionary* result;
+    
+    int maxBaddies = 0;
+    
+    for(int i =0; i < [tiles count]; i++){
+        NSMutableDictionary* tile = tiles[i];
+        int tileBaddies = [[tile objectForKey:@"baddies"] intValue];
+        if(tileBaddies >= maxBaddies){
+            maxBaddies = tileBaddies;
+            result = tile;
+        }
+    }
+    
+    return result;
+}
+
+-(void) moveBaddieFromTile:(int)fromTile toTile:(int)toTile
+{
+    NSMutableDictionary* fTile = tiles[fromTile];
+    NSMutableDictionary* tTile = tiles[toTile];
+    
+    int fromBefore = [[fTile objectForKey:@"baddies"] intValue];
+    int toBefore = [[tTile objectForKey:@"baddies"] intValue];
+    
+    if(fromBefore > 0){
+        [fTile setObject:[NSNumber numberWithInt:(fromBefore-1)] forKey:@"baddies"];
+        [tTile setObject:[NSNumber numberWithInt:(toBefore+1)] forKey:@"baddies"];
+        
+        NSLog(@"move 1 baddie from: %i to: %i", fromTile+1, toTile+1);
+    }
+}
+
++(BOOL) tile:(int)tileNum isNeighborOf:(int)neighborNum
+{
+    BOOL result = NO;
+    
+    if(tileNum == 1){
+        if(neighborNum == 2 || neighborNum == 3){
+            result = YES;
+        }
+    }
+    if(tileNum == 2){
+        if(neighborNum == 1 || neighborNum == 4){
+            result = YES;
+        }
+    }
+    if(tileNum == 3){
+        if(neighborNum == 1 || neighborNum == 4){
+            result = YES;
+        }
+    }
+    if(tileNum == 4){
+        if(neighborNum == 2 || neighborNum == 3){
+            result = YES;
+        }
+    }
+    if(tileNum == 5){
+        if(neighborNum == 3 || neighborNum == 6){
+            result = YES;
+        }
+    }
+    if(tileNum == 6){
+        if(neighborNum == 5 || neighborNum == 4){
+            result = YES;
+        }
+    }
+    
+    return result;
 }
 
 - (void)didReceiveMemoryWarning
