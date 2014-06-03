@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		372801E7193E455D00A11BF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372801E6193E455D00A11BF7 /* Foundation.framework */; };
+		372801E9193E455D00A11BF7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372801E8193E455D00A11BF7 /* CoreGraphics.framework */; };
+		372801EB193E455D00A11BF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372801EA193E455D00A11BF7 /* UIKit.framework */; };
+		372801F1193E455D00A11BF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 372801EF193E455D00A11BF7 /* InfoPlist.strings */; };
+		372801F3193E455D00A11BF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 372801F2193E455D00A11BF7 /* main.m */; };
+		372801F7193E455D00A11BF7 /* GABAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 372801F6193E455D00A11BF7 /* GABAppDelegate.m */; };
+		372801FA193E455E00A11BF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372801F8193E455D00A11BF7 /* Main.storyboard */; };
+		372801FD193E455E00A11BF7 /* GABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372801FC193E455E00A11BF7 /* GABViewController.m */; };
+		372801FF193E455E00A11BF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 372801FE193E455E00A11BF7 /* Images.xcassets */; };
+		37280206193E455E00A11BF7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37280205193E455E00A11BF7 /* XCTest.framework */; };
+		37280207193E455E00A11BF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372801E6193E455D00A11BF7 /* Foundation.framework */; };
+		37280208193E455E00A11BF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372801EA193E455D00A11BF7 /* UIKit.framework */; };
+		37280210193E455E00A11BF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3728020E193E455E00A11BF7 /* InfoPlist.strings */; };
+		37280212193E455E00A11BF7 /* BaddieAITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37280211193E455E00A11BF7 /* BaddieAITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		37280209193E455E00A11BF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 372801DB193E455D00A11BF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 372801E2193E455D00A11BF7;
+			remoteInfo = BaddieAI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		372801E3193E455D00A11BF7 /* BaddieAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaddieAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		372801E6193E455D00A11BF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		372801E8193E455D00A11BF7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		372801EA193E455D00A11BF7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		372801EE193E455D00A11BF7 /* BaddieAI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BaddieAI-Info.plist"; sourceTree = "<group>"; };
+		372801F0193E455D00A11BF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		372801F2193E455D00A11BF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		372801F4193E455D00A11BF7 /* BaddieAI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaddieAI-Prefix.pch"; sourceTree = "<group>"; };
+		372801F5193E455D00A11BF7 /* GABAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GABAppDelegate.h; sourceTree = "<group>"; };
+		372801F6193E455D00A11BF7 /* GABAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GABAppDelegate.m; sourceTree = "<group>"; };
+		372801F9193E455E00A11BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		372801FB193E455E00A11BF7 /* GABViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GABViewController.h; sourceTree = "<group>"; };
+		372801FC193E455E00A11BF7 /* GABViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GABViewController.m; sourceTree = "<group>"; };
+		372801FE193E455E00A11BF7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		37280204193E455E00A11BF7 /* BaddieAITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaddieAITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		37280205193E455E00A11BF7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3728020D193E455E00A11BF7 /* BaddieAITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BaddieAITests-Info.plist"; sourceTree = "<group>"; };
+		3728020F193E455E00A11BF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		37280211193E455E00A11BF7 /* BaddieAITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaddieAITests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		372801E0193E455D00A11BF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				372801E9193E455D00A11BF7 /* CoreGraphics.framework in Frameworks */,
+				372801EB193E455D00A11BF7 /* UIKit.framework in Frameworks */,
+				372801E7193E455D00A11BF7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37280201193E455E00A11BF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37280206193E455E00A11BF7 /* XCTest.framework in Frameworks */,
+				37280208193E455E00A11BF7 /* UIKit.framework in Frameworks */,
+				37280207193E455E00A11BF7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		372801DA193E455D00A11BF7 = {
+			isa = PBXGroup;
+			children = (
+				372801EC193E455D00A11BF7 /* BaddieAI */,
+				3728020B193E455E00A11BF7 /* BaddieAITests */,
+				372801E5193E455D00A11BF7 /* Frameworks */,
+				372801E4193E455D00A11BF7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		372801E4193E455D00A11BF7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				372801E3193E455D00A11BF7 /* BaddieAI.app */,
+				37280204193E455E00A11BF7 /* BaddieAITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		372801E5193E455D00A11BF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				372801E6193E455D00A11BF7 /* Foundation.framework */,
+				372801E8193E455D00A11BF7 /* CoreGraphics.framework */,
+				372801EA193E455D00A11BF7 /* UIKit.framework */,
+				37280205193E455E00A11BF7 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		372801EC193E455D00A11BF7 /* BaddieAI */ = {
+			isa = PBXGroup;
+			children = (
+				372801F5193E455D00A11BF7 /* GABAppDelegate.h */,
+				372801F6193E455D00A11BF7 /* GABAppDelegate.m */,
+				372801F8193E455D00A11BF7 /* Main.storyboard */,
+				372801FB193E455E00A11BF7 /* GABViewController.h */,
+				372801FC193E455E00A11BF7 /* GABViewController.m */,
+				372801FE193E455E00A11BF7 /* Images.xcassets */,
+				372801ED193E455D00A11BF7 /* Supporting Files */,
+			);
+			path = BaddieAI;
+			sourceTree = "<group>";
+		};
+		372801ED193E455D00A11BF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				372801EE193E455D00A11BF7 /* BaddieAI-Info.plist */,
+				372801EF193E455D00A11BF7 /* InfoPlist.strings */,
+				372801F2193E455D00A11BF7 /* main.m */,
+				372801F4193E455D00A11BF7 /* BaddieAI-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3728020B193E455E00A11BF7 /* BaddieAITests */ = {
+			isa = PBXGroup;
+			children = (
+				37280211193E455E00A11BF7 /* BaddieAITests.m */,
+				3728020C193E455E00A11BF7 /* Supporting Files */,
+			);
+			path = BaddieAITests;
+			sourceTree = "<group>";
+		};
+		3728020C193E455E00A11BF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3728020D193E455E00A11BF7 /* BaddieAITests-Info.plist */,
+				3728020E193E455E00A11BF7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		372801E2193E455D00A11BF7 /* BaddieAI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37280215193E455E00A11BF7 /* Build configuration list for PBXNativeTarget "BaddieAI" */;
+			buildPhases = (
+				372801DF193E455D00A11BF7 /* Sources */,
+				372801E0193E455D00A11BF7 /* Frameworks */,
+				372801E1193E455D00A11BF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BaddieAI;
+			productName = BaddieAI;
+			productReference = 372801E3193E455D00A11BF7 /* BaddieAI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		37280203193E455E00A11BF7 /* BaddieAITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37280218193E455E00A11BF7 /* Build configuration list for PBXNativeTarget "BaddieAITests" */;
+			buildPhases = (
+				37280200193E455E00A11BF7 /* Sources */,
+				37280201193E455E00A11BF7 /* Frameworks */,
+				37280202193E455E00A11BF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3728020A193E455E00A11BF7 /* PBXTargetDependency */,
+			);
+			name = BaddieAITests;
+			productName = BaddieAITests;
+			productReference = 37280204193E455E00A11BF7 /* BaddieAITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		372801DB193E455D00A11BF7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = GAB;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Greg Borenstein";
+				TargetAttributes = {
+					37280203193E455E00A11BF7 = {
+						TestTargetID = 372801E2193E455D00A11BF7;
+					};
+				};
+			};
+			buildConfigurationList = 372801DE193E455D00A11BF7 /* Build configuration list for PBXProject "BaddieAI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 372801DA193E455D00A11BF7;
+			productRefGroup = 372801E4193E455D00A11BF7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				372801E2193E455D00A11BF7 /* BaddieAI */,
+				37280203193E455E00A11BF7 /* BaddieAITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		372801E1193E455D00A11BF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				372801FF193E455E00A11BF7 /* Images.xcassets in Resources */,
+				372801F1193E455D00A11BF7 /* InfoPlist.strings in Resources */,
+				372801FA193E455E00A11BF7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37280202193E455E00A11BF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37280210193E455E00A11BF7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		372801DF193E455D00A11BF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				372801F3193E455D00A11BF7 /* main.m in Sources */,
+				372801F7193E455D00A11BF7 /* GABAppDelegate.m in Sources */,
+				372801FD193E455E00A11BF7 /* GABViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37280200193E455E00A11BF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37280212193E455E00A11BF7 /* BaddieAITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3728020A193E455E00A11BF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 372801E2193E455D00A11BF7 /* BaddieAI */;
+			targetProxy = 37280209193E455E00A11BF7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		372801EF193E455D00A11BF7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				372801F0193E455D00A11BF7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		372801F8193E455D00A11BF7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				372801F9193E455E00A11BF7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3728020E193E455E00A11BF7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3728020F193E455E00A11BF7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		37280213193E455E00A11BF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		37280214193E455E00A11BF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		37280216193E455E00A11BF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BaddieAI/BaddieAI-Prefix.pch";
+				INFOPLIST_FILE = "BaddieAI/BaddieAI-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		37280217193E455E00A11BF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BaddieAI/BaddieAI-Prefix.pch";
+				INFOPLIST_FILE = "BaddieAI/BaddieAI-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		37280219193E455E00A11BF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BaddieAI.app/BaddieAI";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BaddieAI/BaddieAI-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BaddieAITests/BaddieAITests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3728021A193E455E00A11BF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BaddieAI.app/BaddieAI";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BaddieAI/BaddieAI-Prefix.pch";
+				INFOPLIST_FILE = "BaddieAITests/BaddieAITests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		372801DE193E455D00A11BF7 /* Build configuration list for PBXProject "BaddieAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37280213193E455E00A11BF7 /* Debug */,
+				37280214193E455E00A11BF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37280215193E455E00A11BF7 /* Build configuration list for PBXNativeTarget "BaddieAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37280216193E455E00A11BF7 /* Debug */,
+				37280217193E455E00A11BF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		37280218193E455E00A11BF7 /* Build configuration list for PBXNativeTarget "BaddieAITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37280219193E455E00A11BF7 /* Debug */,
+				3728021A193E455E00A11BF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 372801DB193E455D00A11BF7 /* Project object */;
+}
