@@ -17,9 +17,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    tiles = [[NSMutableArray alloc] init]; // array position is tile number
     
     NSArray* tileButtons = @[buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix];
+    NSArray* tileLabels = @[baddiesOne, baddiesTwo, baddiesThree, baddiesFour, baddiesFive, baddiesSix];
     
     NSMutableArray* colors = [[NSMutableArray alloc] initWithArray:@[@"red", @"red", @"green", @"green", @"blue", @"blue"]];
     
@@ -28,25 +30,45 @@
         
         NSString* selectedColor = [colors objectAtIndex:colorIndex];
         
+        NSMutableDictionary* tile = [[NSMutableDictionary alloc] init];
+        [tile setObject:[tileLabels objectAtIndex:i] forKey:@"countLabel"];
+        
+        [tile setObject:@0 forKey:@"baddies"];
+        
         if([selectedColor isEqualToString:@"red"]){
             UIButton* button = [tileButtons objectAtIndex:i];
             button.backgroundColor = [UIColor redColor];
+            [tile setObject:@"red" forKey:@"color"];
         }
         
         if([selectedColor isEqualToString:@"green"]){
             UIButton* button = [tileButtons objectAtIndex:i];
             button.backgroundColor = [UIColor greenColor];
+            [tile setObject:@"green" forKey:@"color"];
         }
         
         if([selectedColor isEqualToString:@"blue"]){
             UIButton* button = [tileButtons objectAtIndex:i];
             button.backgroundColor = [UIColor blueColor];
+            [tile setObject:@"blue" forKey:@"color"];
         }
         
-        
-        
         [colors removeObjectAtIndex:colorIndex]; // without replacement
+        [tiles addObject:tile]; // array position is tile number
     }
+}
+
+-(IBAction)rollBaddie:(id)sender
+{
+    int tileLocation = arc4random() % 6;
+    NSMutableDictionary* tile = [tiles objectAtIndex:tileLocation];
+    
+    int newBaddies = [[tile objectForKey:@"baddies" ] intValue] + 1;
+    [tile setObject:[NSNumber numberWithInt:newBaddies] forKey:@"baddies"];
+    UILabel* tileLabel = [tile objectForKey:@"countLabel"];
+    tileLabel.text = [NSString stringWithFormat:@"%i", newBaddies];
+    
+    baddieInstructions.text = [NSString stringWithFormat:@"Baddie arrives on TILE %i.", tileLocation+1];
 }
 
 - (void)didReceiveMemoryWarning

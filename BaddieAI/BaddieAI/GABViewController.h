@@ -15,6 +15,18 @@
     IBOutlet UIButton* buttonFour;
     IBOutlet UIButton* buttonFive;
     IBOutlet UIButton* buttonSix;
+    
+    IBOutlet UILabel* baddiesOne;
+    IBOutlet UILabel* baddiesTwo;
+    IBOutlet UILabel* baddiesThree;
+    IBOutlet UILabel* baddiesFour;
+    IBOutlet UILabel* baddiesFive;
+    IBOutlet UILabel* baddiesSix;
+    
+    IBOutlet UILabel* baddieInstructions;
+    NSMutableArray* tiles;
 }
+
+-(IBAction)rollBaddie:(id)sender;
 
 @end
