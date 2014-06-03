@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface GABViewController : UIViewController{
     IBOutlet UIButton* buttonOne;
@@ -25,8 +26,12 @@
     
     IBOutlet UILabel* baddieInstructions;
     NSMutableArray* tiles;
+    NSArray* tileButtons;
+    
+    int heroLocation;
 }
 
 -(IBAction)rollBaddie:(id)sender;
+-(IBAction)moveHero:(id)sender;
 
 @end

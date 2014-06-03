@@ -20,7 +20,7 @@
     
     tiles = [[NSMutableArray alloc] init]; // array position is tile number
     
-    NSArray* tileButtons = @[buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix];
+    tileButtons = @[buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix];
     NSArray* tileLabels = @[baddiesOne, baddiesTwo, baddiesThree, baddiesFour, baddiesFive, baddiesSix];
     
     NSMutableArray* colors = [[NSMutableArray alloc] initWithArray:@[@"red", @"red", @"green", @"green", @"blue", @"blue"]];
@@ -56,6 +56,24 @@
         [colors removeObjectAtIndex:colorIndex]; // without replacement
         [tiles addObject:tile]; // array position is tile number
     }
+}
+
+-(IBAction)moveHero:(id)sender
+{
+    heroLocation = [tileButtons indexOfObject:sender];
+    
+    for(int i = 0; i < [tileButtons count]; i++){
+        UIButton* tileButton = tileButtons[i];
+        [tileButton.layer setBorderWidth:5.0f];
+
+        [tileButton.layer setBorderColor:[[UIColor clearColor] CGColor]];
+        [tileButton setNeedsDisplay];
+    }
+    
+    UIButton* tileButton = tileButtons[heroLocation];
+    [tileButton.layer setBorderColor:[[UIColor grayColor] CGColor]];
+    [tileButton setNeedsDisplay];
+
 }
 
 -(IBAction)rollBaddie:(id)sender
