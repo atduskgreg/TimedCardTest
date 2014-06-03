@@ -77,6 +77,7 @@
 -(IBAction)moveHero:(id)sender
 {
     heroLocation = [tileButtons indexOfObject:sender];
+    [self clearBaddiesFromTile:heroLocation];
     
     for(int i = 0; i < [tileButtons count]; i++){
         UIButton* tileButton = tileButtons[i];
@@ -92,6 +93,15 @@
 
 }
 
+-(void) clearBaddiesFromTile:(int)tileNum
+{
+    NSMutableDictionary* selectedTile = [tiles objectAtIndex:tileNum];
+    [selectedTile setObject:[NSNumber numberWithInt:0] forKey:@"baddies"];
+    UILabel* countLabel = [selectedTile objectForKey:@"countLabel"];
+    countLabel.text = [NSString stringWithFormat:@"%i",[[selectedTile objectForKey:@"baddies"] intValue]];
+//    [countLabel setNeedsDisplay];
+}
+
 -(IBAction)rollBaddie:(id)sender
 {
     int tileLocation = arc4random() % 6;
@@ -99,7 +109,6 @@
     if(tileLocation != heroLocation){
     
         NSMutableDictionary* tile = [tiles objectAtIndex:tileLocation];
-        NSLog(@"here?");
         int newBaddies = [[tile objectForKey:@"baddies" ] intValue] + 1;
         [tile setObject:[NSNumber numberWithInt:newBaddies] forKey:@"baddies"];
         [self applyDamage:newBaddies toColor:[tile objectForKey:@"color"]];

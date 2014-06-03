@@ -43,6 +43,7 @@
 }
 
 -(void) applyDamage:(int)damage toColor:(NSString*)color;
+-(void) clearBaddiesFromTile:(int)tileNum;
 
 -(IBAction)rollBaddie:(id)sender;
 -(IBAction)moveHero:(id)sender;
